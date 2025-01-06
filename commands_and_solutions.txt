@@ -1,0 +1,83 @@
+IMPORTANT: The directories and files used here are all make believe. Don’t use them for anything other than what's given here.
+
+From your terminal program, change the current directory of your shell so that it is in the CISC220_A1 directory. This directory contains several subdirectories organized like so:
+
+CISC220_A1/
+├── assignments
+│   ├── A1
+│   │   └── images
+│   ├── A2
+│   ├── A3
+│   ├── A4
+│   ├── A5
+│   └── A6
+├── classlist
+├── lectures
+├── marking
+│   └── A1
+│       ├── Anita_Job
+│       │   └── __MACOSX
+│       ├── Betty_Diddit
+│       ├── Jack_Hammer
+│       ├── Justin Case
+│       │   └── answers.txt
+│       ├── Kareem_O'Weet
+│       ├── Luke_Warme
+│       ├── Molly Spancer-Downe
+│       ├── Pierce Deere
+│       ├── Rose
+│       └── Sue_Vlaki
+├── src
+└── tests
+    └── exam
+Each directory may contain zero or more regular files. Take a few minutes using your terminal program to navigate the directory structure and list the contents of the directories so that you understand how files and directories are organized in the assignment.
+
+0. What single command would you use to print the absolute path of the current working directory?:pwd
+
+1. What single command would you use to change into the directory named answers.txt using an absolute path?: cd '/mnt/c/Users/navee/CISC220_A1/CISC220_A1/marking/A1/Justin Case/answers.txt'
+
+2. What single command would you use to change into the directory named answers.txt using a relative path?: cd 'marking/A1/Justin Case/answers.txt'
+
+3. What single command would you use to change into the directory named A6 using as few explicit directory names as possible?: cd ../../../../Assignments/A6
+
+4. How would you use the head command to print the first 20 lines of the file a1answer in the directory named Jack_Hammer without changing the current working directory?:head -n 20 A1/Jack_Hammer/a1answer
+
+5. How would you use the ls command to list all of the files that end with .txt found in the various student directories?: ls -1d /.txt
+
+6. How would you use the ls command to list all of the files that do not start with the letter A found in the various student directories?: ls -1d /[^A]
+
+7. How would you use the diff command to output the differences (if any) between the two a1answer files submitted by two students?: diff a1answer ../Sue_Vlaki/a1answer
+
+8. How would you use the ls command to list all of the non-hidden files and directories submitted by students, sorted by size (largest to smallest)?: ls -lRS -d /
+
+9. How would you use the ls command to recursively list all files in the directory and its subdirectories, including hidden files, but excluding special directory files . and ..?: ls -RAS
+
+10. How would you use the ls command to list all of the students who submitted their work one or two days late, one student per line?: ls -1d */.late+ */.late++
+
+11. How would you use chmod with an octal code to set the permissions of all .pdf files to rw-r-----?: chmod 640 *.pdf
+
+12. How would you use chmod without using an octal code to set the permissions of all .png files to rw-rw-r--?: chmod u=rw,g=rw,o=r *.png
+
+13. How would you use the find command to list all directories having names that start with A or a below the directory CISC220_A1?: find . -type d -name 'A*' -o -name 'a*'
+
+14. What command pipeline would you use to print student numbers enrolled in both CISC124 and CISC220 and save the result in a file named students_124_and_220 without duplicates?: cat CISC220 CISC124 | tee tmp1.txt | sort | uniq -d | tee students_124_and_220
+
+15. What sequence of commands would you use to:
+a. Download the file from the URL https://research.cs.queensu.ca/home/burtonma/2023F/CISC220/A1/old_exams.zip and save it as old_exams.zip: 
+curl -o oldexams.zip https://research.cs.queensu.ca/home/burtonma/2023F/CISC220/A1/old_exams.zip
+curl -O https://research.cs.queensu.ca/home/burtonma/2023F/CISC220/A1/old_exams.zip
+
+b. Move the file into tests/exam: 
+cd tests/exam && (curl -O https://research.cs.queensu.ca/home/burtonma/2023F/CISC220/A1/old_exams.zip)
+
+c. Change the working directory to tests/exam:
+cd .
+
+d. Extract the contents of the downloaded ZIP archive:
+unzip old_exams.zip 
+
+e. Remove the downloaded ZIP archive file?:
+rm -f old_exams.zip
+
+
+
